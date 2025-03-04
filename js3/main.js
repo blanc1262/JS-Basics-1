@@ -1,19 +1,30 @@
-const elementTxt = document.getElementById("elements");
+const numInput = document.getElementById("num1");
+const elementTxt = document.getElementById("element");
 const sumTxt = document.getElementById("sum");
+const highTxt = document.getElementById("high");
+const lowTxt = document.getElementById("low");
+const insertBtn = document.getElementById("insertBtn");
+const deleteBtn = document.getElementById("deleteBtn");
 
-let arr = [];
-let sum = 0;
+let numbers = [];
 
-arr.push(23);
-arr.push(55);
-arr.push(10);
-arr.push(90);
-arr.push(18);
+insertBtn.onclick = () => {
+    let num = parseInt(numInput.value);
+    if (!isNaN(num)) {
+        numbers.push(num);
+        updateDisplay();
+        numInput.value = "";
+    }
+};
 
-for(let i=0; i<arr.length; i++ ) {
-    sum += arr[i];
+deleteBtn.onclick = () => {
+    numbers = [];
+    updateDisplay();
+};
+
+function updateDisplay() {
+    elementTxt.innerHTML = numbers.join("<br>") || "-";
+    sumTxt.innerHTML = numbers.reduce((a, b) => a + b, 0);
+    highTxt.innerHTML = numbers.length ? Math.max(...numbers) : "-";
+    lowTxt.innerHTML = numbers.length ? Math.min(...numbers) : "-";
 }
-
-elementTxt.innerHTML = arr.join("<br>");
-sumTxt.innerHTML = sum;
-console.log(arr);

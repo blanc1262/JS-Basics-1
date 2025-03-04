@@ -3,13 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JS Exercise 3</title>
 </head>
 <body>
-    <h1>Array in JS</h1>
-    <p style="font-weight: bold;">Elements inside the array:</p>
-    <p id="elements"></p>
-    <p>Sum:  <span id="sum"></span></p>
+    <h1>JS Exercise 3</h1>
+    <table>
+        <tr>
+            <td>
+                <label for="num1">Enter a Number:</label>
+            </td>
+            <td>
+                <input type="text" id="num1" placeholder="Enter a number">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button id="insertBtn">Insert</button>
+                <button id="deleteBtn">Delete All</button>
+            </td>
+        </tr>
+    </table>
+
+    <p style="font-weight: bold;">Numbers:</p>
+    <p id="element"></p>
+
+    <p>Sum: <span id="sum" style="color: blue; font-weight: bold;"></span></p>
+    <p>Highest: <span id="high" style="color: green; font-weight: bold;"></span></p>
+    <p>Lowest: <span id="low" style="color: red; font-weight: bold;"></span></p>
+
     <script src="main.js"></script>
 </body>
 </html>
